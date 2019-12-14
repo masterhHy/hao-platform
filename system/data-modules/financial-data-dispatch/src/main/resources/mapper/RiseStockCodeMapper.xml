@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hao.system.finance.data.mapper.RiseStockCodeMapper">
+  <resultMap id="BaseResultMap" type="com.hao.entity.finance.RiseStockCode">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="stock_code_id" jdbcType="INTEGER" property="stockCodeId" />
+    <result column="rise_param_id" jdbcType="INTEGER" property="riseParamId" />
+    <result column="days" jdbcType="SMALLINT" property="days" />
+    <result column="beta" jdbcType="NUMERIC" property="beta" />
+    <result column="r2" jdbcType="NUMERIC" property="r2" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+</mapper>

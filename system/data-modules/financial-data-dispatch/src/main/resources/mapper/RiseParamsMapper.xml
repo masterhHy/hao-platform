@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hao.system.finance.data.mapper.RiseParamsMapper">
+  <resultMap id="BaseResultMap" type="com.hao.entity.finance.RiseParams">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="r2" jdbcType="NUMERIC" property="r2" />
+    <result column="days" jdbcType="SMALLINT" property="days" />
+    <result column="beta" jdbcType="NUMERIC" property="beta" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+</mapper>

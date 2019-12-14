@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hao.system.finance.data.mapper.StockCodeDayDataMapper">
+  <resultMap id="BaseResultMap" type="com.hao.entity.finance.StockCodeDayData">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="open_date" jdbcType="VARCHAR" property="openDate" />
+    <result column="open_price" jdbcType="NUMERIC" property="openPrice" />
+    <result column="close_price" jdbcType="NUMERIC" property="closePrice" />
+    <result column="top_price" jdbcType="NUMERIC" property="topPrice" />
+    <result column="low_price" jdbcType="NUMERIC" property="lowPrice" />
+    <result column="final_percent" jdbcType="NUMERIC" property="finalPercent" />
+    <result column="num" jdbcType="NUMERIC" property="num" />
+    <result column="amount" jdbcType="NUMERIC" property="amount" />
+    <result column="change_hand" jdbcType="NUMERIC" property="changeHand" />
+    <result column="stock_code_id" jdbcType="INTEGER" property="stockCodeId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+  <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+
+    <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+      <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+      <!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
+      <property name="caseSensitive" value="true"/>
+      <property name="forceAnnotation" value="true"/>
+      <property name="beginningDelimiter" value=""/>
+      <property name="endingDelimiter" value=""/>
+    </plugin>
+
+    <jdbcConnection driverClass="org.postgresql.Driver"
+                    connectionURL="jdbc:postgresql://localhost:5432/hy_platform"
+                    userId="postgres"
+                    password="123456">
+    </jdbcConnection>
+
+    <javaTypeResolver>
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+
+    <javaModelGenerator targetPackage="com.hao.entity.finance" targetProject="D:\my_project_workspace\hao-platform\common-utils\src\main\java"/>
+
+
+
+    <sqlMapGenerator targetPackage="mapper"  targetProject="D:\my_project_workspace\hao-platform\system\data-modules\financial-data-dispatch\src\main\resources"/>
+
+    <javaClientGenerator targetPackage="com.hao.system.finance.data.mapper" targetProject="D:\my_project_workspace\hao-platform\system\data-modules\financial-data-dispatch\src\main\java" type="XMLMAPPER" />
+
+    <table tableName="fn_rise_params" domainObjectName="RiseParams" ></table>
+    <table tableName="fn_rise_stock_code" domainObjectName="RiseStockCode" ></table>
+  </context>
+</generatorConfiguration>
