@@ -68,9 +68,29 @@
 		</dependency>
 
 	</dependencies>
+	<profiles>
+		<profile>
+			<id>product</id>
+			<properties>
+				<package.environment>product</package.environment>
+			</properties>
+		</profile>
 
+	</profiles>
 	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources/${package.environment}</directory>
+				<filtering>true</filtering>
+				<targetPath>config</targetPath>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
 		<plugins>
+
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
