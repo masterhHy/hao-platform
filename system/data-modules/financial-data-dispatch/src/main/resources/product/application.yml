@@ -14,7 +14,7 @@ spring:
     name: finance-data
     url: jdbc:postgresql://localhost:5432/hy_platform?useSSL=false&allowMultiQueries=true
     username: postgres
-    password: 123456
+    password: hao_maria
     # 使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: org.postgresql.Driver
