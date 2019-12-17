@@ -81,6 +81,13 @@ public class LineStockCodeService {
             }
         }
         if(resLine!=null){
+            RiseStockCode param = new RiseStockCode();
+            //删除旧数据
+            param.setRiseParamId(params.getId());
+            param.setStockCodeId(stockCode.getId());
+            riseStockCodeMapper.delete(param);
+
+
             RiseStockCode r = new RiseStockCode();
             r.setCreateTime(new Date());
             r.setBeta(new BigDecimal(resLine.beta));
@@ -90,7 +97,7 @@ public class LineStockCodeService {
             r.setStockCodeId(stockCode.getId());
             riseStockCodeMapper.insertSelective(r);
             log.info("匹配到一只股票:{}",stockCode.getName());
-            XxlJobLogger.log("匹配到一只股票:{0}",stockCode.getName());
+            XxlJobLogger.log("匹配到一只股票:{}",stockCode.getName());
         }
 
 

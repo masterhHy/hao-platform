@@ -44,7 +44,7 @@ public class StockCodePipeline implements Pipeline {
             }
         }
         log.info("本次更新股票代码数量有:{}",(codeList.size()-data.size()));
-        XxlJobLogger.log("本次更新股票代码数量有:{0},新增数量:{1}",(codeList.size()-data.size()),data.size());
+        XxlJobLogger.log("本次更新股票代码数量有:{},新增数量:{}",(codeList.size()-data.size()),data.size());
         bactchInserMapper.bacthInsert(data);
     }
 

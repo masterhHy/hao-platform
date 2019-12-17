@@ -18,7 +18,7 @@ public abstract class CommonJobAbs extends IJobHandler {
         long st = System.currentTimeMillis();
         try {
             logger.info(">>>>>>>>>>>>>>>开始执行任务，开始时间:{}",sdf.format(new Date()));
-            XxlJobLogger.log(">>>>>>>>>>>>>>>开始执行任务，开始时间:{0}",sdf.format(new Date()));
+            XxlJobLogger.log(">>>>>>>>>>>>>>>开始执行任务，开始时间:{}",sdf.format(new Date()));
             Integer res = this.process(param);
             if(res==null||res!=0){
                 success=true;
@@ -30,8 +30,8 @@ public abstract class CommonJobAbs extends IJobHandler {
         long et = System.currentTimeMillis();
         logger.info(">>>>>>>>>>>>>>>任务执行完毕，结束时间:{}",sdf.format(new Date()));
         logger.info(">>>>>>>>>>>>>>>任务执行完毕，总耗时:{} s",(et-st)/1000);
-        XxlJobLogger.log(">>>>>>>>>>>>>>>任务执行完毕，结束时间:{0}",sdf.format(new Date()));
-        XxlJobLogger.log(">>>>>>>>>>>>>>>任务执行完毕，总耗时:{0} s",(et-st)/1000);
+        XxlJobLogger.log(">>>>>>>>>>>>>>>任务执行完毕，结束时间:{}",sdf.format(new Date()));
+        XxlJobLogger.log(">>>>>>>>>>>>>>>任务执行完毕，总耗时:{} s",(et-st)/1000);
 
         if(success){
             return ReturnT.SUCCESS;

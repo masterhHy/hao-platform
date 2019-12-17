@@ -38,7 +38,7 @@ public class StockCodeIndustryPipeline implements Pipeline {
             Example example = new Example(StockCode.class);
             example.createCriteria().andEqualTo("code",s);
             stockCodeMapper.updateByExampleSelective(update,example);
-            XxlJobLogger.log("更新股票代码:{0},行业:{1}",s,industry);
+            XxlJobLogger.log("更新股票代码:{},行业:{}",s,industry);
             log.info("更新股票代码:{},行业:{}",s,industry);
         }
 

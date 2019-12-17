@@ -40,7 +40,7 @@ public class StockCodeDayDataPipeline implements Pipeline {
                 }
             }
             log.info("股票id{},新增日数据数量:{}",record.getStockCodeId(),data.size());
-            XxlJobLogger.log("股票id{0},新增日数据数量:{1}",record.getStockCodeId(),data.size());
+            XxlJobLogger.log("股票id{},新增日数据数量:{}",record.getStockCodeId(),data.size());
             bactchInserMapper.bacthInsert(data);
         }
 
