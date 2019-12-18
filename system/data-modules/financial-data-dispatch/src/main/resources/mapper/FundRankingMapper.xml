@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hao.system.finance.data.mapper.FundRankingMapper">
+  <resultMap id="BaseResultMap" type="com.hao.entity.finance.FundRanking">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="fund_code_id" jdbcType="INTEGER" property="fundCodeId" />
+    <result column="worth" jdbcType="NUMERIC" property="worth" />
+    <result column="one_day" jdbcType="NUMERIC" property="oneDay" />
+    <result column="one_week" jdbcType="NUMERIC" property="oneWeek" />
+    <result column="one_month" jdbcType="NUMERIC" property="oneMonth" />
+    <result column="three_month" jdbcType="NUMERIC" property="threeMonth" />
+    <result column="six_month" jdbcType="NUMERIC" property="sixMonth" />
+    <result column="one_year" jdbcType="NUMERIC" property="oneYear" />
+    <result column="create_time" jdbcType="DATE" property="createTime" />
+    <result column="update_time" jdbcType="DATE" property="updateTime" />
+  </resultMap>
+</mapper>

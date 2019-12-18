@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hao.system.finance.data.mapper.FundHoldingsMapper">
+  <resultMap id="BaseResultMap" type="com.hao.entity.finance.FundHoldings">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="fund_code_id" jdbcType="INTEGER" property="fundCodeId" />
+    <result column="stock_code_id" jdbcType="INTEGER" property="stockCodeId" />
+    <result column="day" jdbcType="VARCHAR" property="day" />
+    <result column="percent" jdbcType="NUMERIC" property="percent" />
+    <result column="stock_num" jdbcType="NUMERIC" property="stockNum" />
+    <result column="stock_worth" jdbcType="NUMERIC" property="stockWorth" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+</mapper>
