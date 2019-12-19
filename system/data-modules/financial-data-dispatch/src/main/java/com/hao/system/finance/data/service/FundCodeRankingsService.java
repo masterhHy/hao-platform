@@ -1,7 +1,9 @@
 package com.hao.system.finance.data.service;
 
 import com.alibaba.fastjson.JSONObject;
+import com.hao.entity.finance.FundCode;
 import com.hao.entity.finance.StockCode;
+import com.hao.system.finance.data.mapper.FundCodeMapper;
 import com.hao.system.finance.data.mapper.StockCodeMapper;
 import com.hao.system.finance.data.service.db.FundCodeRankingsPipeline;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,7 @@ import us.codecraft.webmagic.processor.PageProcessor;
 import us.codecraft.webmagic.selector.Html;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,12 +28,21 @@ public class FundCodeRankingsService implements PageProcessor {
     private FundCodeRankingsPipeline fundCodeRankingsPipeline;
     @Autowired
     private StockCodeMapper stockCodeMapper;
+    @Autowired
+    private FundCodeMapper fundCodeMapper;
 
     public  void downLoad(){
+        List<String> urls = new ArrayList<>();
+        List<FundCode> codes = fundCodeMapper.selectAll();
+        for (FundCode code :codes){
+            String url ="http://fundf10.eastmoney.com/FundArchivesDatas.aspx?" +
+                    "type=jjcc&code="+code.getCode()+"&topline=10&fundCodeId="+code.getId();
 
-        String url ="http://fundf10.eastmoney.com/FundArchivesDatas.aspx?type=jjcc&code=003745&topline=10";
+            urls.add(url);
+        }
 
-        Spider.create(this).addUrl(url)
+        String[] arr = new String[urls.size()];
+        Spider.create(this).addUrl(urls.toArray(arr))
                 .addPipeline(fundCodeRankingsPipeline)
                 .run();
 
@@ -45,6 +57,7 @@ public class FundCodeRankingsService implements PageProcessor {
         for (StockCode code:stockCodes){
             idMap.put(code.getCode(),code.getId());
         }
+        String code = page.getRequest().getUrl().substring(page.getRequest().getUrl().lastIndexOf("&")).replace("&fundCodeId=","");
 
         String data = page.getRawText().replace("var apidata=", "").trim();
         data = data.substring(0,data.length()-1).trim();
