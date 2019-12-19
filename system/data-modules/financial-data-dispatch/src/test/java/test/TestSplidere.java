@@ -1,11 +1,7 @@
 package test;
 
 import com.hao.system.finance.data.FinancialDataDispatchBootstrap;
-import com.hao.system.finance.data.common.BactchInserMapper;
-import com.hao.system.finance.data.service.LineStockCodeService;
-import com.hao.system.finance.data.service.StockCodeDayDataDownLoadService;
-import com.hao.system.finance.data.service.StockCodeDownLoadService;
-import com.hao.system.finance.data.service.StockCodeIndustryDownLoadService;
+import com.hao.system.finance.data.service.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +19,10 @@ public class TestSplidere {
     private StockCodeDayDataDownLoadService stockCodeDayDataDownLoadService;
     @Autowired
     private LineStockCodeService lineStockCodeService;
+    @Autowired
+    private FundCodeDownLoadService fundCodeDownLoadService;
+    @Autowired
+    private FundCodeRankingsService fundCodeRankingsService;
     @Test
     public void test01(){
         stockCodeDownLoadService.downLoad();
@@ -38,6 +38,14 @@ public class TestSplidere {
     @Test
     public void test04(){
         lineStockCodeService.processLineStockCode();
+    }
+    @Test
+    public void test05(){
+        fundCodeDownLoadService.downLoad();
+    }
+    @Test
+    public void test06(){
+        fundCodeRankingsService.downLoad();
     }
 
 
