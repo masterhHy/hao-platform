@@ -97,6 +97,10 @@ public class FundCodeRankingsService implements PageProcessor {
                 i++;
             }
         }
+
+        page.putField("data","");
+
+
     }
 
     @Override
