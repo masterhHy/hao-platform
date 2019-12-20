@@ -58,6 +58,7 @@ public class FundCodeDownLoadService implements PageProcessor {
             //1       |2                   |3       |4            |5        |6   |7    |8    |9     |10    |11
             FundCode fc=new FundCode();
             fc.setCode(split[0]);
+            List<FundCode> select = fundCodeMapper.select(fc);
             fc.setName(split[1]);
             if("股票型".equals(split[2])){
                 fc.setType((short)1);
@@ -65,7 +66,6 @@ public class FundCodeDownLoadService implements PageProcessor {
                 fc.setType((short)2);
             }
             fc.setCreateTime(new Date());
-            List<FundCode> select = fundCodeMapper.select(fc);
             if(select.size()==0){
                 codes.add(fc);
             }
