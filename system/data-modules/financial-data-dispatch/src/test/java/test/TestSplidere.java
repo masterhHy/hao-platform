@@ -22,7 +22,7 @@ public class TestSplidere {
     @Autowired
     private FundCodeDownLoadService fundCodeDownLoadService;
     @Autowired
-    private FundCodeRankingsService fundCodeRankingsService;
+    private FundCodeHoldingsService fundCodeRankingsService;
     @Test
     public void test01(){
         stockCodeDownLoadService.downLoad();
