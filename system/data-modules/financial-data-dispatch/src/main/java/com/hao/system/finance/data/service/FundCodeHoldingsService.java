@@ -8,6 +8,7 @@ import com.hao.system.finance.data.mapper.FundCodeMapper;
 import com.hao.system.finance.data.mapper.FundHoldingsMapper;
 import com.hao.system.finance.data.mapper.StockCodeMapper;
 import com.hao.system.finance.data.service.db.FundCodeRankingsPipeline;
+import com.xxl.job.core.log.XxlJobLogger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import us.codecraft.webmagic.Page;
@@ -148,7 +149,7 @@ public class FundCodeHoldingsService implements PageProcessor {
 
         page.putField("data",holdings);
 
-
+        XxlJobLogger.log(">>>>>>>>>>>>>>>>>基金:{}持仓下载完成！",fundCodeId);
     }
 
     @Override
