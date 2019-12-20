@@ -1,7 +1,11 @@
 package com.hao.common.constant;
 
 public enum JobNameConstant {
-    StockCode("StockCodeHandlerJob","股票代码下载")
+    StockCodeHandlerJob("StockCodeHandlerJob","股票代码下载"),
+    LineStockCodeHandlerJob("LineStockCodeHandlerJob","线性汇聚"),
+    StockCodeDayDataHandlerJob("StockCodeDayDataHandlerJob","股票日数据下载"),
+    FundCodeHandlerJob("FundCodeHandlerJob","基金代码下载"),
+    FundCodeHoldingsHandlerJob("FundCodeHoldingsHandlerJob","基金持仓下载"),
 
 
     ;
