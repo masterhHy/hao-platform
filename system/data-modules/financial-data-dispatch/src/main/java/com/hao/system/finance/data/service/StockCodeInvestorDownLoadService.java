@@ -34,8 +34,9 @@ public class StockCodeInvestorDownLoadService implements PageProcessor {
         List<String> urls = new ArrayList<>();
         List<StockCode> codes = stockCodeMapper.selectAll();
         for (StockCode code :codes){
-            String url ="http://stockpage.10jqka.com.cn/"+code.getCode()+"/position/?stockCodeId="+code.getId();
+            String url ="http://stockpage.10jqka.com.cn/"+code.getCode()+"/position/#holdetail?stockCodeId="+code.getId();
             urls.add(url);
+            break;
         }
         String[] arr = new String[urls.size()];
         Spider.create(this).addUrl(urls.toArray(arr))
@@ -48,9 +49,10 @@ public class StockCodeInvestorDownLoadService implements PageProcessor {
     @Override
     public void process(Page page) {
         String stockCodeId = page.getRequest().getUrl().substring(page.getRequest().getUrl().lastIndexOf("?")).replace("?stockCodeId=","");
-        page.getHtml();
+        System.out.println(page.getHtml().all());
+        List<String> all = page.getHtml().$("#holdetail").all();
 
-
+        System.out.println(all);
     }
 
     @Override
