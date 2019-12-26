@@ -23,6 +23,8 @@ public class TestSplidere {
     private FundCodeDownLoadService fundCodeDownLoadService;
     @Autowired
     private FundCodeHoldingsService fundCodeRankingsService;
+    @Autowired
+    private StockCodeInvestorDownLoadService stockCodeInvestorDownLoadService;
     @Test
     public void test01(){
         stockCodeDownLoadService.downLoad();
@@ -46,6 +48,10 @@ public class TestSplidere {
     @Test
     public void test06(){
         fundCodeRankingsService.downLoad();
+    }
+    @Test
+    public void test07(){
+        stockCodeInvestorDownLoadService.downLoad();
     }
 
 

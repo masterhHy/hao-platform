@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hao.system.finance.data.mapper.StockCodeInvertorMapper">
+  <resultMap id="BaseResultMap" type="com.hao.entity.finance.StockCodeInvertor">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="stock_code_id" jdbcType="INTEGER" property="stockCodeId" />
+    <result column="investor_name" jdbcType="VARCHAR" property="investorName" />
+    <result column="invertor_type" jdbcType="SMALLINT" property="invertorType" />
+    <result column="day" jdbcType="VARCHAR" property="day" />
+    <result column="percent" jdbcType="NUMERIC" property="percent" />
+    <result column="stock_num" jdbcType="NUMERIC" property="stockNum" />
+    <result column="stock_worth" jdbcType="NUMERIC" property="stockWorth" />
+    <result column="comment" jdbcType="VARCHAR" property="comment" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+</mapper>

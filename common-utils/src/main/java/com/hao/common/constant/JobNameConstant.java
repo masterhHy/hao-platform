@@ -6,6 +6,7 @@ public enum JobNameConstant {
     StockCodeDayDataHandlerJob("StockCodeDayDataHandlerJob","股票日数据下载"),
     FundCodeHandlerJob("FundCodeHandlerJob","基金代码下载"),
     FundCodeHoldingsHandlerJob("FundCodeHoldingsHandlerJob","基金持仓下载"),
+    StockCodeInvestorHandlerJob("StockCodeInvestorHandlerJob","股票投资者下载"),
 
 
     ;

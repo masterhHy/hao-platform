@@ -33,8 +33,6 @@
 
     <javaClientGenerator targetPackage="com.hao.system.finance.data.mapper" targetProject="D:\my_project_workspace\hao-platform\system\data-modules\financial-data-dispatch\src\main\java" type="XMLMAPPER" />
 
-    <table tableName="fn_fund_code" domainObjectName="FundCode" ></table>
-    <table tableName="fn_fund_holdings" domainObjectName="FundHoldings" ></table>
-    <table tableName="fn_fund_ranking" domainObjectName="FundRanking" ></table>
+    <table tableName="fn_stock_code_investor" domainObjectName="StockCodeInvertor" ></table>
   </context>
 </generatorConfiguration>
