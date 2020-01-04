@@ -150,7 +150,7 @@ public class StockCodeInvestorDownLoadService implements PageProcessor {
 
 
         page.putField("data",intoDb);
-        XxlJobLogger.log("已完成股票{}对应持仓数据下载",stockCodeId);
+        XxlJobLogger.log("已完成股票{}对应持仓数据下载,数据量为:{}",stockCodeId,intoDb.size());
 
     }
 
