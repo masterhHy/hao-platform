@@ -5,6 +5,7 @@ import com.hao.entity.finance.StockCodeInvestor;
 import com.hao.system.finance.data.mapper.StockCodeInvestorMapper;
 import com.hao.system.finance.data.mapper.StockCodeMapper;
 import com.hao.system.finance.data.service.db.StockCodeInvestorPipeline;
+import com.xxl.job.core.log.XxlJobLogger;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -149,6 +150,7 @@ public class StockCodeInvestorDownLoadService implements PageProcessor {
 
 
         page.putField("data",intoDb);
+        XxlJobLogger.log("已完成股票{}对应持仓数据下载",stockCodeId);
 
     }
 
