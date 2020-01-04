@@ -59,10 +59,10 @@ public class StockCodeIndustryDownLoadService implements PageProcessor {
             String industry = new Html(tdList.get(4)).$("span","text").get();
             String net = new Html(tdList.get(6)).$("a","text").get();
             String code = page.getRequest().getUrl().replace("http://basic.10jqka.com.cn/","").replace("/company.html#stockpage","");
-            page.putField("area",area);
-            page.putField("industry",industry);
-            page.putField("net",net);
-            page.putField("code",code);
+            page.putField("area",area.trim());
+            page.putField("industry",industry.trim());
+            page.putField("net",net.trim());
+            page.putField("code",code.trim());
 
         }
 
