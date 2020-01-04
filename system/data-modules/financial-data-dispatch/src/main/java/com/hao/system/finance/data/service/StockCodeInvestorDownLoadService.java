@@ -98,37 +98,37 @@ public class StockCodeInvestorDownLoadService implements PageProcessor {
                 }
 
                 String num = tdList.get(1).trim();
-                Double codeQun =0.0;
+                BigDecimal codeQun =new BigDecimal(0);
                 if(num.indexOf("万")!=-1){
-                    codeQun =Double.parseDouble(num.replace("万", ""));
+                    codeQun = new BigDecimal(num.replace("万", ""));
                 }else if(num.indexOf("亿")!=-1){
-                    codeQun =Double.parseDouble(num.replace("亿", ""))*10000;
+                    codeQun = new BigDecimal(num.replace("亿", "")).multiply(new BigDecimal(10000));
                 }else if(num.indexOf("-")!=-1){
-                    codeQun =0.0;
+                    codeQun =new BigDecimal(0);
                 }else{
                     try {
-                        codeQun = Double.parseDouble(num)/10000;
+                        codeQun = codeQun.divide(new BigDecimal(10000));
                     } catch (Exception e) {
 
                     }
                 }
-                investor.setStockNum(new BigDecimal(codeQun));
+                investor.setStockNum(codeQun);
 
                 String worth = tdList.get(2).trim();
-                Double stockWorth =0.0;
+                BigDecimal stockWorth =new BigDecimal(0);
                 if(worth.indexOf("万")!=-1){
-                    stockWorth =Double.parseDouble(worth.replace("万", ""));
+                    stockWorth =new BigDecimal(worth.replace("万", ""));
                 }else if(worth.indexOf("亿")!=-1){
-                    stockWorth =Double.parseDouble(worth.replace("亿", ""))*10000;
+                    stockWorth = new BigDecimal(worth.replace("亿", "")).multiply(new BigDecimal(10000));
                 }else if(worth.indexOf("-")!=-1){
-                    stockWorth =0.0;
+                    stockWorth = new BigDecimal(0);
                 }else{
                     try {
-                        stockWorth = Double.parseDouble(worth)/10000;
+                        stockWorth = new BigDecimal(worth).divide(new BigDecimal(10000));
                     } catch (Exception e) {
                     }
                 }
-                investor.setStockWorth(new BigDecimal(stockWorth));
+                investor.setStockWorth(stockWorth);
 
 
                 String percent = tdList.get(3).trim().replace("%", "");
