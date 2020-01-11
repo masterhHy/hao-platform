@@ -1,5 +1,6 @@
 package com.hao.system.finance.data.service;
 
+import com.alibaba.fastjson.JSONObject;
 import com.hao.common.utils.DateHelper;
 import com.hao.common.utils.ExpressionParser;
 import com.hao.common.utils.LinearRegression;
@@ -54,6 +55,7 @@ public class LineStockCodeService {
         }
         for (RiseParams params:riseParams){
             for (StockCode item:stockCodes){
+                XxlJobLogger.log("正在使用配置{},进行匹配", JSONObject.toJSONString(params));
                 RiseStockCode param = new RiseStockCode();
                 //删除旧数据
                 param.setRiseParamId(params.getId());
