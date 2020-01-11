@@ -50,6 +50,10 @@ public class LineStockCodeService {
         }
         for (RiseParams params:riseParams){
             for (StockCode item:stockCodes){
+                RiseStockCode param = new RiseStockCode();
+                //删除旧数据
+                param.setRiseParamId(params.getId());
+                riseStockCodeMapper.delete(param);
                 this.proccessOne(item,params);
             }
 
@@ -83,12 +87,6 @@ public class LineStockCodeService {
             }
         }
         if(resLine!=null){
-            RiseStockCode param = new RiseStockCode();
-            //删除旧数据
-            param.setRiseParamId(params.getId());
-            param.setStockCodeId(stockCode.getId());
-            riseStockCodeMapper.delete(param);
-
 
             RiseStockCode r = new RiseStockCode();
             r.setCreateTime(new Date());
