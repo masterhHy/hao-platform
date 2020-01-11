@@ -54,8 +54,8 @@ public class LineStockCodeService {
             XxlJobLogger.log("请配置fn_rise_params 参数！！在进行汇聚");
         }
         for (RiseParams params:riseParams){
+            XxlJobLogger.log("正在使用配置{},进行匹配", JSONObject.toJSONString(params));
             for (StockCode item:stockCodes){
-                XxlJobLogger.log("正在使用配置{},进行匹配", JSONObject.toJSONString(params));
                 RiseStockCode param = new RiseStockCode();
                 //删除旧数据
                 param.setRiseParamId(params.getId());
