@@ -41,7 +41,9 @@ public class LineStockCodeService {
 
     public void processLineStockCode(){
         List<StockCode> stockCodes = stockCodeMapper.selectAll();
-        List<RiseParams> riseParams = riseParamsMapper.selectAll();
+        RiseParams record = new RiseParams();
+        record.setStatus((short)1);
+        List<RiseParams> riseParams = riseParamsMapper.select(record);
         if(riseParams.size()==0){
             log.info("请配置fn_rise_params 参数！！在进行汇聚");
             XxlJobLogger.log("请配置fn_rise_params 参数！！在进行汇聚");

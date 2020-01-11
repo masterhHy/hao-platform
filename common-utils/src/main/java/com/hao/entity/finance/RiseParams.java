@@ -1,8 +1,10 @@
 package com.hao.entity.finance;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.math.BigDecimal;
 import java.util.Date;
-import javax.persistence.*;
 
 @Table(name = "fn_rise_params")
 public class RiseParams {
@@ -38,6 +40,19 @@ public class RiseParams {
      */
     @Column(name = "update_time")
     private Date updateTime;
+
+    /**
+     * 是否生效 0 不生效 1 生效
+     */
+    private Short status;
+
+    public Short getStatus() {
+        return status;
+    }
+
+    public void setStatus(Short status) {
+        this.status = status;
+    }
 
     /**
      * 获取表id
