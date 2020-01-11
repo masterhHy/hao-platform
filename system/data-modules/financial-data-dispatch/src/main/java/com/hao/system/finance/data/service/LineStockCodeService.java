@@ -55,11 +55,11 @@ public class LineStockCodeService {
         }
         for (RiseParams params:riseParams){
             XxlJobLogger.log("正在使用配置{},进行匹配", JSONObject.toJSONString(params));
+            RiseStockCode param = new RiseStockCode();
+            //删除旧数据
+            param.setRiseParamId(params.getId());
+            riseStockCodeMapper.delete(param);
             for (StockCode item:stockCodes){
-                RiseStockCode param = new RiseStockCode();
-                //删除旧数据
-                param.setRiseParamId(params.getId());
-                riseStockCodeMapper.delete(param);
                 this.proccessOne(item,params);
             }
 
