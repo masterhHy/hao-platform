@@ -27,7 +27,7 @@ public class RiseParams {
     /**
      * 斜率最小值
      */
-    private BigDecimal beta;
+    private String beta;
 
     /**
      * 创建时间
@@ -113,7 +113,7 @@ public class RiseParams {
      *
      * @return beta - 斜率最小值
      */
-    public BigDecimal getBeta() {
+    public String getBeta() {
         return beta;
     }
 
@@ -122,7 +122,7 @@ public class RiseParams {
      *
      * @param beta 斜率最小值
      */
-    public void setBeta(BigDecimal beta) {
+    public void setBeta(String beta) {
         this.beta = beta;
     }
 

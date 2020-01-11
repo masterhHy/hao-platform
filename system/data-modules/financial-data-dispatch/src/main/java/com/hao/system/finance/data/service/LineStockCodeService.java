@@ -1,6 +1,7 @@
 package com.hao.system.finance.data.service;
 
 import com.hao.common.utils.DateHelper;
+import com.hao.common.utils.ExpressionParser;
 import com.hao.common.utils.LinearRegression;
 import com.hao.common.utils.vo.Linear;
 import com.hao.entity.finance.RiseParams;
@@ -18,6 +19,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
 
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -80,7 +84,7 @@ public class LineStockCodeService {
             }
             Linear linear = this.getLinear(sum);
             //在拟合度大于x值情况下 取最大天数 （天数越大拟合度越差）
-            if(linear.rsquare>params.getR2().doubleValue()&&linear.beta>params.getBeta().doubleValue()){
+            if(linear.rsquare>params.getR2().doubleValue()&& ExpressionParser.booleanParser(params.getBeta().replace("x",linear.beta+""))){
                 resDay = sum.size();
                 resLine=linear;
                 break;

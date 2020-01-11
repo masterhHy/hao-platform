@@ -11,7 +11,7 @@ Target Server Type    : PGSQL
 Target Server Version : 90614
 File Encoding         : 65001
 
-Date: 2020-01-11 16:24:08
+Date: 2020-01-11 18:34:15
 */
 
 
@@ -201,7 +201,7 @@ CREATE TABLE "public"."fn_rise_params" (
 "id" int4 DEFAULT nextval('fn_rise_params_id_seq'::regclass) NOT NULL,
 "r2" numeric(5,4) NOT NULL,
 "days" int2 NOT NULL,
-"beta" numeric(5,2) NOT NULL,
+"beta" varchar(200) COLLATE "default" NOT NULL,
 "create_time" timestamp(6) NOT NULL,
 "update_time" timestamp(6),
 "status" int2
@@ -212,7 +212,7 @@ WITH (OIDS=FALSE)
 COMMENT ON COLUMN "public"."fn_rise_params"."id" IS '表id';
 COMMENT ON COLUMN "public"."fn_rise_params"."r2" IS '方差';
 COMMENT ON COLUMN "public"."fn_rise_params"."days" IS '天数最小值';
-COMMENT ON COLUMN "public"."fn_rise_params"."beta" IS '斜率最小值';
+COMMENT ON COLUMN "public"."fn_rise_params"."beta" IS '符合斜率值表达式';
 COMMENT ON COLUMN "public"."fn_rise_params"."create_time" IS '创建时间';
 COMMENT ON COLUMN "public"."fn_rise_params"."update_time" IS '修改时间';
 COMMENT ON COLUMN "public"."fn_rise_params"."status" IS '是否生效 0 不生效 1 生效';

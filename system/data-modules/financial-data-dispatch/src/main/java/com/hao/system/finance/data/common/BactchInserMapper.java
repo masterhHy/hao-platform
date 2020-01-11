@@ -1,8 +1,7 @@
 package com.hao.system.finance.data.common;
 
-import com.hao.entity.finance.StockCode;
+import com.xxl.job.core.log.XxlJobLogger;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
@@ -11,10 +10,8 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Component
@@ -65,9 +62,11 @@ public class BactchInserMapper {
                 }
                 jdbcTemplate.batchUpdate(sql, valList);
                 log.info(">>>>>>>>>>>>>>>>>成功入库{}条数据",valList.size());
+                XxlJobLogger.log(">>>>>>>>>>>>>>>>>成功入库{}条数据",valList.size());
             }
         }catch (Exception e){
             log.info("",e);
+            XxlJobLogger.log(e);
             throw new RuntimeException(e.getMessage());
         }
 
