@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>tech-modules</artifactId>
+    <artifactId>base-modules</artifactId>
     <packaging>pom</packaging>
     <modules>
         <module>xxl-job</module>

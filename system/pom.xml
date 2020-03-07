@@ -12,7 +12,7 @@
     <artifactId>system</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>tech-modules</module>
+        <module>base-modules</module>
         <module>data-modules</module>
         <module>service-modules</module>
     </modules>

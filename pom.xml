@@ -11,7 +11,7 @@
     <modules>
         <module>system</module>
         <module>auth</module>
-        <module>resource</module>
+        <module>web-controller</module>
         <module>common-utils</module>
     </modules>
     <parent>
