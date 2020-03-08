@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: financial-data-application
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        server-addr: ${nacos.url}
+        group: DEFAULT_GROUP
+        prefix: ${spring.application.name}
+        file-extension: yml
+      discovery:
+        server-addr: ${nacos.url}
+
+logging:
+  level:
+    com:
+      alibaba:
+        cloud:
+          nacos:
+            client:
+              NacosPropertySourceBuilder: error
+
+
+

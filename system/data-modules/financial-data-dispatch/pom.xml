@@ -5,7 +5,7 @@
     <parent>
         <artifactId>data-modules</artifactId>
         <groupId>com.hao.platform</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -16,7 +16,7 @@
         <dependency>
             <groupId>com.hao.platform</groupId>
             <artifactId>common-utils</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${revision}</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework.cloud</groupId>
@@ -26,7 +26,10 @@
                     <groupId>org.springframework.cloud</groupId>
                     <artifactId>spring-cloud-starter-security</artifactId>
                 </exclusion>
-
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-data-redis</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
 
@@ -112,11 +115,11 @@
     </profiles>
     <build>
         <resources>
-            <resource>
+            <!--<resource>
                 <directory>src/main/resources/${package.environment}</directory>
                 <filtering>true</filtering>
                 <targetPath>config</targetPath>
-            </resource>
+            </resource>-->
             <resource>
                 <directory>src/main/resources</directory>
             </resource>
