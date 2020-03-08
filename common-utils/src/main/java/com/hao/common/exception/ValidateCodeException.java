@@ -3,7 +3,6 @@ package com.hao.common.exception;
 /**
  * 验证码类型异常
  *
- * @author Vean
  */
 public class ValidateCodeException extends Exception {
 

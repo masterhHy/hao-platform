@@ -10,7 +10,6 @@ import java.util.regex.Pattern;
 /**
  * 校验是否为合法的手机号码
  *
- * @author Vean
  */
 public class MobileValidator implements ConstraintValidator<IsMobile, String> {
 

@@ -6,6 +6,7 @@ import org.apache.commons.logging.LogFactory;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -646,7 +647,17 @@ public class DateHelper {
 
         return lastDay;
     }
-	
+	/**
+	 * 判断当前时间是否在指定时间范围
+	 *
+	 * @param from 开始时间
+	 * @param to   结束时间
+	 * @return 结果
+	 */
+	public static boolean between(LocalTime from, LocalTime to) {
+		LocalTime now = LocalTime.now();
+		return now.isAfter(from) && now.isBefore(to);
+	}
 
 	
 	
