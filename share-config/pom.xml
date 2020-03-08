@@ -28,6 +28,7 @@
                 <configuration>
                     <includes>
                         <include>**/*.properties</include>
+                        <include>**/*.txt</include>
                     </includes>
                 </configuration>
             </plugin>

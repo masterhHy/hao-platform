@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: ak-gateway
+  cloud:
+    nacos:
+      config:
+        server-addr: ${nacos.url}:8848
+        group: DEFAULT_GROUP
+        prefix: ak-gateway
+        file-extension: yaml
+      discovery:
+        server-addr: ${nacos.url}:8848
+
+logging:
+  level:
+    com:
+      alibaba:
+        cloud:
+          nacos:
+            client:
+              NacosPropertySourceBuilder: error
+
+ak:
+  gateway:
+    forbidRequestUri: /**/actuator/**
+    anonRequestUrl: /swagger-ui.html,/webjars/**,/swagger-resources/**,/v2/api-docs/**,/doc.html,/docs/**
