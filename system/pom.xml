@@ -17,15 +17,6 @@
         <module>service-modules</module>
     </modules>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.hao.platform</groupId>
-            <artifactId>common-utils</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-
-    </dependencies>
 
 
 </project>
