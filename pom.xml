@@ -13,6 +13,7 @@
         <module>auth</module>
         <module>web-controller</module>
         <module>common-utils</module>
+        <module>share-config</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
